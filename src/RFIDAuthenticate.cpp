@@ -24,9 +24,9 @@ bool authenticate(bool authenticateKeyAOrKeyB, byte *key, byte sectorTrailer)
         authenticate = MFRC522Constants::PICC_CMD_MF_AUTH_KEY_B;
     }
 
-    MFRC522::StatusCode status_code = mfrc522.PCD_Authenticate(authenticate, sectorTrailer, &authKey, &(mfrc522.uid));
+    MFRC522::StatusCode status = mfrc522.PCD_Authenticate(authenticate, sectorTrailer, &authKey, &(mfrc522.uid));
 
-    switch (status_code)
+    switch (status)
     {
     case 0:
         return true;
