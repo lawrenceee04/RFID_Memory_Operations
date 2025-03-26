@@ -1,6 +1,6 @@
 {
     "name": "RFID_Memory_Operations",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "MIFARE Classic EV1 1k rfid memory operations using a MFRC522 reader on your SPI interface.",
     "keywords": "rfid, writer, reader",
     "repository": {
@@ -15,7 +15,7 @@
     "license": "GPL-3.0-only",
     "frameworks": "arduino",
     "platforms": ["atmelavr", "espressif8266", "espressif32"],
-    "headers": ["RFIDAuthenticate.h"],
+    "headers": ["RFIDAccessConditions.h", "RFIDAuthenticate.h", "RFIDRead.h", "RFIDWrite.h", "RFIDSector.h"],
     "dependencies": [
         {
             "owner": "computer991",
