@@ -45,9 +45,7 @@ bool write(byte block, byte *buffer, byte size)
 
 bool writeToDataBlock(byte block, String data)
 {
-    byte size = data.length();
+    // byte size = data.length();
 
-    write(block, stringToHex(data), size);
-
-    return true;
+    return write(block, stringToHex(data), 16);
 }

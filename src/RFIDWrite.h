@@ -14,4 +14,5 @@ byte *stringToHex(String string);
 bool write(byte block, byte *buffer, byte size);
 
 bool writeToDataBlock(byte block, String data);
+
 #endif

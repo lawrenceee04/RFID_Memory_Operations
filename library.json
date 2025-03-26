@@ -1,6 +1,6 @@
 {
     "name": "RFID_Memory_Operations",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "description": "MIFARE Classic EV1 1k rfid memory operations using a MFRC522 reader on your SPI interface.",
     "keywords": "rfid, writer, reader",
     "repository": {
