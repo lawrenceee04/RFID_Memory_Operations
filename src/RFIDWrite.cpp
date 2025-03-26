@@ -8,6 +8,25 @@
 
 extern MFRC522 mfrc522;
 
+byte *stringToHex(String string)
+{
+    size_t stringLength = string.length();
+
+    if (stringLength <= 752)
+    {
+        byte *hexArray = new byte[stringLength];
+
+        for (size_t i = 0; i < stringLength; i++)
+        {
+            hexArray[i] = static_cast<uint8_t>(string[i]);
+        }
+
+        return hexArray;
+    }
+
+    return nullptr;
+}
+
 bool write(byte block, byte *buffer, byte size)
 {
     MFRC522::StatusCode status = mfrc522.MIFARE_Write(block, buffer, size);
@@ -22,4 +41,13 @@ bool write(byte block, byte *buffer, byte size)
         return false;
         break;
     }
+}
+
+bool writeToDataBlock(byte block, String data)
+{
+    byte size = data.length();
+
+    write(block, stringToHex(data), size);
+
+    return true;
 }
